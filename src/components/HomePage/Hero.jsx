@@ -8,7 +8,7 @@ export default function HomeHero() {
           <div className='max-w-md'>
             <h1 className='text-5xl font-bold'>Hi, I&apos;m Martin K. Nielsen</h1>
 
-            <p class='relative my-6 mx-auto w-max font-mono before:absolute before:inset-0 before:animate-typewriter before:bg-base-100 after:absolute after:inset-0 after:w-[0.125em] after:animate-caret after:bg-base-content'>
+            <p className='relative my-6 mx-auto w-max font-mono before:absolute before:inset-0 before:animate-typewriter before:bg-base-100 after:absolute after:inset-0 after:w-[0.125em] after:animate-caret after:bg-base-content'>
               Hello World
             </p>
 

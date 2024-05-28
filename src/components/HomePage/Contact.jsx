@@ -11,10 +11,13 @@ export default function HomeContact() {
 
           <div className=''>
             <p className='mb-4'>
-              I&apos;d love to hear from you! Whether it&apos;s a project, job opportunity, or just a chat, feel free to reach out.
+              I&apos;d love to hear from you! Whether it&apos;s a project, job opportunity, or just
+              a chat, feel free to reach out.
             </p>
             <div className=''>
-              <Link href='/pages/contact' className='text-base text-base-100 btn btn-sm btn-accent mb-4 hover:animate-heartbeat'>
+              <Link
+                href='/contact'
+                className='text-base text-base-100 btn btn-sm btn-accent mb-4 hover:animate-heartbeat'>
                 Email Me -&gt;
               </Link>
             </div>

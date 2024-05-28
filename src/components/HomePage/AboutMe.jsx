@@ -23,15 +23,19 @@ export default function HomeAbout() {
             </div>
             <div className='md:w-1/2 md:pl-10 mt-8 md:mt-0'>
               <p className='mb-4'>
-                I&apos;m a frontend web developer with a passion for creating dynamic and responsive web applications. Currently studying
-                web development at a vocational school in Aarhus/Grenaa, and I specialize in frontend development with Next.js.
+                I&apos;m a frontend web developer with a passion for creating dynamic and responsive
+                web applications. Currently studying web development at a vocational school in
+                Aarhus/Grenaa, and I specialize in frontend development with Next.js.
               </p>
               <p className='mb-4'>
-                I enjoy playing video games and working out in my free time. I believe in continuous learning and personal growth, and
-                I&apos;m committed to delivering high-quality work in all my projects.
+                I enjoy playing video games and working out in my free time. I believe in continuous
+                learning and personal growth, and I&apos;m committed to delivering high-quality work
+                in all my projects.
               </p>
               <div className=''>
-                <Link href='/pages/about' className='text-base text-base-100 btn btn-sm btn-secondary hover:animate-heartbeat'>
+                <Link
+                  href='/about'
+                  className='text-base text-base-100 btn btn-sm btn-secondary hover:animate-heartbeat'>
                   Read More -&gt;
                 </Link>
               </div>
