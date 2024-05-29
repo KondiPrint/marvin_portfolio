@@ -3,8 +3,8 @@ import Image from 'next/image';
 export default function AboutMeContent() {
   return (
     <>
-      <section className='mt-10'>
-        <div className='md:max-w-screen-sm md:mx-auto md:p-2 space-y-3 animate-fade-in-left'>
+      <section className='mt-10 animate-fade-in'>
+        <div className='px-4 md:max-w-screen-sm md:mx-auto md:p-2 space-y-3'>
           <div className='md:grid md:grid-cols-2 md:place-items-center space-y-3'>
             <Image
               src='/assets/img/Martin_cropped.jpg'
@@ -13,19 +13,20 @@ export default function AboutMeContent() {
               width={400}
               height={400}
             />
-            <h1 className='text-3xl font-bold mb-4'>
-              Hi there! <span className='inline-block animate-jiggle'>👋</span> I&apos;m Martin
-              Kannegaard Nielsen
+            <h1 className='text-3xl font-bold mb-4 text-center'>
+              Hi there! <br /> <span className='inline-block animate-jiggle'>👋</span>
+              <br />
+              I&apos;m Martin Kannegaard Nielsen
             </h1>
           </div>
-          <article className='md:border-l-4 md:border-primary md:p-4'>
-            <p className='mb-4'>
+          <article className='md:border-l-4 md:border-primary space-y-4'>
+            <p>
               I&apos;m a <span className='font-semibold'>frontend web developer</span> with a
               passion for creating dynamic and responsive web applications. With a solid foundation
               in web development, I&apos;ve had the opportunity to work on various projects that
               showcase my skills and dedication.
             </p>
-            <p className='mb-4'>
+            <p>
               I hold a degree in web development from a vocational school in Aarhus/Grenaa, where I
               developed a strong foundation in frontend technologies. Throughout my studies,
               I&apos;ve specialized in{' '}
@@ -38,7 +39,7 @@ export default function AboutMeContent() {
               in continuous learning and personal growth, and I&apos;m committed to delivering
               high-quality work in all my projects.
             </p>
-            <p className='mb-4'>
+            <p>
               Looking ahead, I&apos;m excited to finish my studies this September and begin my
               professional journey in the web development industry. Whether it&apos;s working on
               innovative projects or tackling new challenges, I&apos;m always eager to make a
@@ -47,10 +48,10 @@ export default function AboutMeContent() {
           </article>
         </div>
         <aside className='mt-20'>
-          <div className='divider divider-secondary text-2xl '>
+          <div className='divider divider-secondary my-10 text-2xl '>
             <h2 className='text-3xl font-bold'>Let&apos;s connect!</h2>
           </div>
-          <div className='md:max-w-screen-sm md:mx-auto md:p-2 animate-fade-in-left'>
+          <div className='px-4 md:max-w-screen-sm md:mx-auto md:p-2'>
             <p className='text-lg mt-6 text-center'></p>
             <p className='text-lg mt-6'>
               Feel free to reach out to me at{' '}

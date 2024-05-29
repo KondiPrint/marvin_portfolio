@@ -1,6 +1,7 @@
 'use client';
 import AboutMeContent from '@/components/AboutPage/AboutMe';
 import { useRouter } from 'next/navigation';
+import { FaArrowRightLong } from 'react-icons/fa6';
 
 export default function About() {
   const router = useRouter();
@@ -11,11 +12,11 @@ export default function About() {
   return (
     <>
       <AboutMeContent />
-      <div className='md:max-w-screen-sm md:mx-auto md:p-2 animate-fade-in-left'>
+      <div className='p-4 animate-fade-in flex justify-end w-full'>
         <button
           onClick={handleClick}
-          className='text-base text-base-100 btn btn-sm btn-primary hover:animate-heartbeat'>
-          My timeline -&gt;
+          className='text-base text-base-100 btn btn-md btn-primary hover:animate-heartbeat'>
+          My timeline <FaArrowRightLong />
         </button>
       </div>
     </>
