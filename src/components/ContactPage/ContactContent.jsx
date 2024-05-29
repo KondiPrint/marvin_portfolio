@@ -1,15 +1,19 @@
 export default function ContactContent() {
   return (
     <>
-      <div className='flex flex-col justify-center items-center min-h-screen animate-fade-in'>
-        <div className='max-w-2xl w-full md:p-10'>
-          <div className='divider divider-primary my-10 text-xl'>
-            <h2 className='text-3xl font-bold text-center'>Get In Touch</h2>
-          </div>
+      <section className='flex flex-col justify-center items-center min-h-screen animate-fade-in'>
+        <div className='divider divider-primary my-10 text-xl'>
+          <h2 className='text-3xl font-bold text-center'>Get In Touch</h2>
+        </div>
+        <div className='md:max-w-screen-sm md:mx-auto'>
           <p className='mb-10 text-center'>
-            I&apos;d love to hear from you! Whether it&apos;s a project, job opportunity, or just a chat, feel free to reach out.
+            I&apos;d love to hear from you! Whether it&apos;s a project, job opportunity, or just a
+            chat, feel free to reach out.
           </p>
-          <form action='https://formsubmit.co/your-email@example.com' method='POST' className='space-y-8'>
+          <form
+            action='https://formsubmit.co/your-email@example.com'
+            method='POST'
+            className='space-y-8 md:px-10'>
             <input type='hidden' name='_next' value='https://yourdomain.com/thanks' />
             <input type='hidden' name='_subject' value='New submission from contact form!' />
             <div className='relative indicator w-full'>
@@ -20,10 +24,14 @@ export default function ContactContent() {
                 required
                 className='input input-bordered peer focus:outline-none focus:border-primary w-full'
               />
-              <label htmlFor='name' className='absolute peer-focus:-top-6 peer-focus:left-1 top-3 left-3 transition-all duration-300'>
+              <label
+                htmlFor='name'
+                className='absolute peer-focus:-top-6 peer-focus:left-1 top-3 left-3 transition-all duration-300'>
                 Name:
               </label>
-              <span className='indicator-item indicator-center badge peer-focus:hidden'>Required</span>
+              <span className='indicator-item indicator-center badge peer-focus:hidden'>
+                Required
+              </span>
             </div>
             <div className='relative indicator w-full'>
               <input
@@ -33,10 +41,14 @@ export default function ContactContent() {
                 required
                 className='input input-bordered peer focus:outline-none focus:border-primary w-full'
               />
-              <label htmlFor='email' className='absolute peer-focus:-top-6 peer-focus:left-1 top-3 left-3 transition-all duration-300'>
+              <label
+                htmlFor='email'
+                className='absolute peer-focus:-top-6 peer-focus:left-1 top-3 left-3 transition-all duration-300'>
                 Email:
               </label>
-              <span className='indicator-item indicator-center badge peer-focus:hidden'>Required</span>
+              <span className='indicator-item indicator-center badge peer-focus:hidden'>
+                Required
+              </span>
             </div>
             <div className='relative indicator w-full'>
               <textarea
@@ -45,13 +57,19 @@ export default function ContactContent() {
                 rows='4'
                 required
                 className='textarea textarea-bordered peer focus:outline-none focus:border-primary w-full'></textarea>
-              <label htmlFor='message' className='absolute peer-focus:-top-6 peer-focus:left-1 top-3 left-3 transition-all duration-300'>
+              <label
+                htmlFor='message'
+                className='absolute peer-focus:-top-6 peer-focus:left-1 top-3 left-3 transition-all duration-300'>
                 Message:
               </label>
-              <span className='indicator-item indicator-center badge peer-focus:hidden'>Required</span>
+              <span className='indicator-item indicator-center badge peer-focus:hidden'>
+                Required
+              </span>
             </div>
-            <div className='text-center'>
-              <button type='submit' className='text-base text-base-100 btn btn-sm btn-primary w-full md:w-auto hover:animate-heartbeat'>
+            <div className='text-center flex'>
+              <button
+                type='submit'
+                className='text-base text-base-100 btn btn-sm btn-primary w-full md:w-auto md:justify-start hover:animate-heartbeat'>
                 Send Message
               </button>
             </div>
@@ -68,7 +86,7 @@ export default function ContactContent() {
             </p>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 }

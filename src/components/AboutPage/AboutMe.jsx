@@ -3,22 +3,22 @@ import Image from 'next/image';
 export default function AboutMeContent() {
   return (
     <>
-      <section className='flex justify-center items-center min-h-screen animate-fade-in'>
-        <div className='max-w-4xl flex flex-col md:flex-row'>
-          <div className='flex justify-center md:justify-start md:pr-6'>
+      <section className='mt-10'>
+        <div className='md:max-w-screen-sm md:mx-auto md:p-2 space-y-3 animate-fade-in-left'>
+          <div className='md:grid md:grid-cols-2 md:place-items-center space-y-3'>
             <Image
               src='/assets/img/Martin_cropped.jpg'
               alt='Martin Kannegaard Nielsen'
-              className='mask mask-decagon size-48 object-cover object-top'
+              className='mask mask-decagon md:mask-squircle size-48 object-cover object-top mx-auto'
               width={400}
               height={400}
             />
-          </div>
-          <article className='mt-6 md:mt-0 md:pl-6'>
             <h1 className='text-3xl font-bold mb-4'>
               Hi there! <span className='inline-block animate-jiggle'>👋</span> I&apos;m Martin
               Kannegaard Nielsen
             </h1>
+          </div>
+          <article className='md:border-l-4 md:border-primary md:p-4'>
             <p className='mb-4'>
               I&apos;m a <span className='font-semibold'>frontend web developer</span> with a
               passion for creating dynamic and responsive web applications. With a solid foundation
@@ -44,9 +44,13 @@ export default function AboutMeContent() {
               innovative projects or tackling new challenges, I&apos;m always eager to make a
               meaningful impact.
             </p>
-            <div className='divider divider-secondary my-10 text-2xl'>
-              <h2 className='text-3xl font-bold'>Let&apos;s connect!</h2>
-            </div>
+          </article>
+        </div>
+        <aside className='mt-20'>
+          <div className='divider divider-secondary text-2xl '>
+            <h2 className='text-3xl font-bold'>Let&apos;s connect!</h2>
+          </div>
+          <div className='md:max-w-screen-sm md:mx-auto md:p-2 animate-fade-in-left'>
             <p className='text-lg mt-6 text-center'></p>
             <p className='text-lg mt-6'>
               Feel free to reach out to me at{' '}
@@ -61,8 +65,8 @@ export default function AboutMeContent() {
               </a>
               . I&apos;d love to chat about web development or discuss potential collaborations.
             </p>
-          </article>
-        </div>
+          </div>
+        </aside>
       </section>
     </>
   );

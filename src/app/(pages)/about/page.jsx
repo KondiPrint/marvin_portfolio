@@ -11,10 +11,10 @@ export default function About() {
   return (
     <>
       <AboutMeContent />
-      <div>
+      <div className='md:max-w-screen-sm md:mx-auto md:p-2 animate-fade-in-left'>
         <button
           onClick={handleClick}
-          className='text-base text-base-100 btn btn-sm btn-primary mt-10 hover:animate-heartbeat'>
+          className='text-base text-base-100 btn btn-sm btn-primary hover:animate-heartbeat'>
           My timeline -&gt;
         </button>
       </div>
