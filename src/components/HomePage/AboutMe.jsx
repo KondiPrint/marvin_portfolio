@@ -17,7 +17,7 @@ export default function HomeAbout() {
               width={400}
               height={400}
               alt='Martin K. Nielsen'
-              className='rounded-bl-3xl rounded-tr-3xl rounded-tl-sm rounded-br-sm shadow-lg w-full h-auto cover'
+              className='rounded-bl-3xl rounded-tr-3xl rounded-tl-sm rounded-br-sm shadow-2xl w-full h-auto cover'
             />
           </figure>
           <div className='space-y-4'>
@@ -34,8 +34,9 @@ export default function HomeAbout() {
             <div>
               <Link
                 href='/about'
-                className='text-base text-base-100 btn btn-lg btn-block sm:btn-md btn-secondary hover:animate-heartbeat'>
-                Read More <FaArrowRightLong className='size-4' />
+                className='text-base text-base-100 btn btn-lg btn-block sm:btn-md btn-secondary hover:animate-heartbeat group'>
+                Read More{' '}
+                <FaArrowRightLong className='size-4 group-hover:animate-slide-out-right' />
               </Link>
             </div>
           </div>

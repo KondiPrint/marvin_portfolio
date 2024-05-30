@@ -1,6 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/pages/**/*.{js,ts,jsx,tsx,mdx}', './src/components/**/*.{js,ts,jsx,tsx,mdx}', './src/app/**/*.{js,ts,jsx,tsx,mdx}'],
+  content: [
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
   theme: {
     extend: {
       colors: {
@@ -18,6 +22,9 @@ module.exports = {
         'fade-in': 'fade-in 0.6s ease-in',
         typewriter: 'typewriter 2s steps(11) forwards',
         caret: 'typewriter 2s steps(76) forwards, blink 1s steps(76) infinite 2s',
+        'slide-in-right': 'slide-in-right 0.6s ease-out',
+        'slide-out-right': 'slide-out-right 1s ease-out infinite',
+        'slide-out-left': 'slide-out-left 1s ease-out infinite',
       },
       keyframes: {
         heartbeat: {
@@ -79,6 +86,30 @@ module.exports = {
           },
           '100%': {
             opacity: '0',
+          },
+        },
+        'slide-in-right': {
+          '0%': {
+            transform: 'translateX(20px)',
+          },
+          '100%': {
+            transform: 'translateX(0)',
+          },
+        },
+        'slide-out-right': {
+          '0%': {
+            transform: 'translateX(0)',
+          },
+          '100%': {
+            transform: 'translateX(10px)',
+          },
+        },
+        'slide-out-left': {
+          '0%': {
+            transform: 'translateX(0)',
+          },
+          '100%': {
+            transform: 'translateX(-10px)',
           },
         },
       },

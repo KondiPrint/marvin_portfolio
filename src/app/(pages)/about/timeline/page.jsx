@@ -16,8 +16,8 @@ export default function AboutTimeline() {
       <div className='p-4 animate-fade-in'>
         <button
           onClick={handleClick}
-          className='text-base text-base-100 btn btn-md btn-primary hover:animate-heartbeat'>
-          <FaArrowLeftLong /> Back
+          className='text-base text-base-100 btn btn-md btn-primary hover:animate-heartbeat group'>
+          <FaArrowLeftLong className='size-4 group-hover:animate-slide-out-left' /> Back
         </button>
       </div>
     </>

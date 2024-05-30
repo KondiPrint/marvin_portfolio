@@ -15,8 +15,8 @@ export default function About() {
       <div className='p-4 animate-fade-in flex justify-end w-full'>
         <button
           onClick={handleClick}
-          className='text-base text-base-100 btn btn-md btn-primary hover:animate-heartbeat'>
-          My timeline <FaArrowRightLong />
+          className='text-base text-base-100 btn btn-md btn-primary hover:animate-heartbeat group'>
+          My timeline <FaArrowRightLong className='size-4 group-hover:animate-slide-out-right' />
         </button>
       </div>
     </>
