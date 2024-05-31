@@ -15,6 +15,7 @@ export default function Header() {
   ];
 
   const navLinksDrop = [
+    { name: 'Wonders', href: '/wonders' },
     { name: 'Todos', href: '/todos' },
     { name: 'News', href: '/news' },
     { name: 'Weather', href: '/weather' },
@@ -25,7 +26,7 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header id='top' className='relative border-b-2'>
+    <header id='top' className='relative border-b-2 px-2'>
       <nav className='navbar'>
         <div className='flex-1 gap-2'>
           <Link href='/' className='hover:brightness-125'>
@@ -34,6 +35,7 @@ export default function Header() {
               width={150}
               height={90}
               alt='KondiPrints logo'
+              className='h-auto w-auto'
             />
           </Link>
           <ThemeToggler />

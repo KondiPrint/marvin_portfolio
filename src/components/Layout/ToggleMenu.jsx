@@ -42,6 +42,7 @@ export default function ToggleMenu() {
   ];
 
   const navLinksDrop = [
+    { name: 'Wonders', href: '/wonders' },
     { name: 'Todos', href: '/todos' },
     { name: 'News', href: '/news' },
     { name: 'Weather', href: '/weather' },

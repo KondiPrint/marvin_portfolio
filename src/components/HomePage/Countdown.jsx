@@ -43,8 +43,11 @@ export default function CountdownTimer() {
   }, [countDownDate]);
 
   return (
-    <section>
-      <div className='grid grid-flow-col gap-5 text-center auto-cols-max'>
+    <>
+      <div className='divider divider-secondary my-10 text-xl'>
+        <h2 className='text-3xl font-bold text-center'>Graduate in:</h2>
+      </div>
+      <section className='flex flex-wrap justify-center gap-5 text-center uppercase'>
         <div className='flex flex-col p-2 bg-neutral rounded-box text-neutral-content'>
           <span className='countdown font-mono text-5xl'>
             <span style={{ '--value': days }}></span>
@@ -69,7 +72,7 @@ export default function CountdownTimer() {
           </span>
           sec
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

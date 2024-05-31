@@ -17,6 +17,11 @@ const nextConfig = {
         hostname: 'unsplash.it',
         port: '',
       },
+      {
+        protocol: 'https',
+        hostname: 'upload.wikimedia.org',
+        port: '',
+      },
     ],
   },
 };
