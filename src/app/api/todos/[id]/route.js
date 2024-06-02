@@ -22,19 +22,21 @@ export const GET = async (req, route) => {
 };
 
 export const DELETE = async (req, route) => {
-  const id = route.params.id;
-
   try {
+    const id = route.params.id;
+    console.log(`#5 Todos [id]: Deleting to do with: ${id}`);
     const todo = await getTodoById(id);
 
     if (!todo) {
+      console.log(`#6 Todos [id]: Todo not found for id: ${id}`);
       return NextResponse.json({ message: 'Todo not found' }, { status: 404 });
     }
 
     await deleteTodoById(id);
+    console.error('#7 Todos [id]: Todo deleted');
     return NextResponse.json({ message: 'Todo deleted' }, { status: 200 });
   } catch (err) {
-    console.error('#5 Todos [id]: Error deleting todo:', err);
+    console.error('#8 Todos [id]: Error deleting todo:', err);
 
     return NextResponse.json({ message: 'Error deleting todo', err }, { status: 500 });
   }

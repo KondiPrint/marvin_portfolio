@@ -1,11 +1,13 @@
-import { getData } from './data';
+import { getTodos, getCategories } from '@/app/dataFetch/todos/todosData';
+import TodoAddContent from '@/components/Todos/TodoAddContent';
 
-const TodoAdd = async (id) => {
-  const dataId = id.searchParams.id;
+const TodoAdd = async () => {
+  const data = await getTodos();
+  const dataCat = await getCategories();
 
   return (
     <>
-      <h1>Here is a place you can add todos!</h1>
+      <TodoAddContent data={data} dataCat={dataCat} />
     </>
   );
 };
