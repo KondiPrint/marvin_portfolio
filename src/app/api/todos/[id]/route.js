@@ -1,4 +1,4 @@
-import { getTodoById, deleteTodoById } from '@/app/api/lib/todos';
+import { getTodoById, deleteTodoById, updateTodoById } from '@/app/lib/todos/data';
 import { NextRequest, NextResponse } from 'next/server';
 
 export const GET = async (req, route) => {
@@ -39,5 +39,23 @@ export const DELETE = async (req, route) => {
     console.error('#8 Todos [id]: Error deleting todo:', err);
 
     return NextResponse.json({ message: 'Error deleting todo', err }, { status: 500 });
+  }
+};
+
+export const PUT = async (req, route) => {
+  try {
+    const id = route.params.id;
+    const todoData = await req.json();
+    console.log(`#9 Todos [id]: Updating todo with id: ${id}`); // Log the id being updated
+
+    const success = await updateTodoById(id, todoData);
+    if (success) {
+      return NextResponse.json({ message: 'Todo updated successfully' }, { status: 200 });
+    } else {
+      throw new Error('Failed to update todo');
+    }
+  } catch (err) {
+    console.error('#10 Todos [id]: Error updating todo:', err);
+    return NextResponse.json({ message: 'Error updating todo', err }, { status: 500 });
   }
 };

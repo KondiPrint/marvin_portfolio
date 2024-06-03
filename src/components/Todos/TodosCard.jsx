@@ -75,7 +75,7 @@ export default function TodosCards({ data }) {
               <p>{t.description}</p>
               <div className='card-actions join gap-0'>
                 <Link
-                  href={{ pathname: `/todos/todosedit/`, query: { id: t._id } }}
+                  href={{ pathname: `/todos/todoedit/`, query: { id: t._id } }}
                   className='btn join-item btn-success hover:animate-heartbeat'>
                   <FaEdit size='2em' />
                 </Link>

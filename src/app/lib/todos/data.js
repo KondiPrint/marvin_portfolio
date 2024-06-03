@@ -54,6 +54,25 @@ export const postTodo = async (todoData) => {
   }
 };
 
+export const updateTodoById = async (id, todoData) => {
+  try {
+    const res = await fetch(`${TODOS_API_URL}/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(todoData),
+    });
+    if (!res.ok) {
+      throw new Error('#13 Lib Todos: Failed to update todo');
+    }
+    return true;
+  } catch (error) {
+    console.error('#14 Lib Todos: Error updating todo:', error);
+    return false;
+  }
+};
+
 export const deleteTodoById = async (id) => {
   try {
     const res = await fetch(`${TODOS_API_URL}/${id}`, {

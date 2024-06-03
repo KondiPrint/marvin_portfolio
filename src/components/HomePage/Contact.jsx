@@ -9,10 +9,10 @@ export default function HomeContact() {
         <div className='divider divider-secondary my-10 text-xl'>
           <h2 className='text-3xl font-bold text-center'>Get In Touch</h2>
         </div>
-        <div className='sm:max-w-screen-sm sm:mx-auto sm:grid sm:grid-cols-2 sm:gap-3 items-center p-4'>
+        <div className='sm:max-w-screen-sm sm:mx-auto sm:grid sm:grid-cols-2 sm:gap-3 items-center p-4 md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl'>
           <figure className='order-last mb-4'>
             <Image
-              src='/assets/img/VZb7gZb2.jpg'
+              src='/assets/img/gjmlKHpe.jpg'
               width={400}
               height={400}
               alt='Martin K. Nielsen'
@@ -21,8 +21,8 @@ export default function HomeContact() {
           </figure>
           <div className='space-y-4'>
             <p>
-              I&apos;d love to hear from you! Whether it&apos;s a project, job opportunity, or just
-              a chat, feel free to reach out.
+              I&apos;m excited to connect! Whether it&apos;s about a project, a job opportunity, or
+              just a friendly chat, feel free to reach out.
             </p>
             <div className='flex flex-col items-center nav'>
               <Link

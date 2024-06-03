@@ -12,7 +12,9 @@ export default function HomeHero() {
               Hello World
             </p>
 
-            <p>Frontend Developer with a passion for as building beautiful web applications</p>
+            <p>
+              I&apos;m a Frontend Developer passionate about building beautiful web applications.
+            </p>
 
             <Link
               href='#about'
