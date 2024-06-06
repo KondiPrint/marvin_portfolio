@@ -5,6 +5,7 @@ export default function ContactContent() {
         <div className='divider divider-primary my-10 text-xl'>
           <h2 className='text-3xl font-bold text-center'>Get In Touch</h2>
         </div>
+
         <div className='px-4 md:max-w-screen-sm md:mx-auto'>
           <p className='mb-10 text-center'>
             I&apos;d love to hear from you! Whether it&apos;s a project, job opportunity, or just a

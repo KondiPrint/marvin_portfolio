@@ -47,7 +47,7 @@ export default function Header() {
               const isActive = pathname.startsWith(links.href);
 
               return (
-                <li key={links.name}>
+                <li key={links.name} className=''>
                   <Link
                     href={links.href}
                     className={isActive ? 'text-primary font-bold' : 'font-normal'}>
