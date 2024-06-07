@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { deleteTodoById } from '@/app/lib/todos/data';
 import { FaEdit, FaTrash, FaPlus } from 'react-icons/fa';
 import AmountPerSite from '../Pagination/AmountPerSite';
@@ -34,6 +34,21 @@ export default function TodosCards({ data }) {
     }
   };
 
+  const getDefaultImage = (category) => {
+    switch (category.toLowerCase()) {
+      case 'chores':
+        return '/assets/img/chores.jpg';
+      case 'hobby':
+        return '/assets/img/hobbies.jpg';
+      case 'school':
+        return '/assets/img/school.jpg';
+      case 'work':
+        return '/assets/img/work.jpg';
+      default:
+        return '/assets/img/office-3199438_960_720.jpg';
+    }
+  };
+
   let dataLength = data?.todos.length;
 
   return (
@@ -57,12 +72,9 @@ export default function TodosCards({ data }) {
           <div key={t._id} className='card card-compact w-auto bg-base-100 shadow-2xl'>
             <figure className='relative'>
               <Image
-                src={
-                  t.image ||
-                  'https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg'
-                }
-                width={928}
-                height={548}
+                src={t.image || getDefaultImage(t.category.category)}
+                width={600}
+                height={600}
                 alt={t.title}
                 className='h-full w-full'
               />
