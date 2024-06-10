@@ -1,4 +1,4 @@
-// lib/todos.js
+// lib/todos/data.js
 
 const TODOS_API_URL = 'https://server-api-mongodb-1wka.onrender.com/todos';
 const CATEGORIES_API_URL = 'https://server-api-mongodb-1wka.onrender.com/categories';
