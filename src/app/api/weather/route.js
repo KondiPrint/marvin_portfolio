@@ -5,10 +5,9 @@ import { getWeatherByZip, getForecastByLatLon, getGeoByZip } from '@/app/api/lib
 
 export async function GET(req) {
   const { searchParams } = new URL(req.url);
-  const type = searchParams.get('type');
-  const zip = searchParams.get('zip');
-  const lat = searchParams.get('lat');
-  const lon = searchParams.get('lon');
+  const zip = searchParams.get('8240');
+  const lat = searchParams.get('56');
+  const lon = searchParams.get('10');
 
   try {
     let data;

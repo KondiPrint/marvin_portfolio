@@ -1,31 +1,16 @@
-// src/app/(pages)/weather/page.jsx
-
-import {
-  getWeatherByZip,
-  getForecastByLatLon,
-  getGeoByZip,
-} from '@/app/dataFetch/weather/weatherData';
+import { getWeatherByZip } from '@/app/dataFetch/weather/weatherData';
 import WeatherContent from '@/components/Weather/WeatherContent';
 
-export default async function WeatherPage({ searchParams }) {
-  const zip = searchParams?.zip || '8240'; // Default value
-  const lat = searchParams?.lat || '56';
-  const lon = searchParams?.lon || '10';
+export default async function WeatherPage() {
+  const data = await getWeatherByZip();
 
-  try {
-    const [weatherData, forecastData, geoData] = await Promise.all([
-      getWeatherByZip(zip),
-      getForecastByLatLon(lat, lon),
-      getGeoByZip(zip),
-    ]);
+  console.log(data);
 
-    return (
-      <>
-        <WeatherContent weatherData={weatherData} forecastData={forecastData} geoData={geoData} />
-      </>
-    );
-  } catch (error) {
-    console.error('Error fetching weather data:', error);
-    return <div>Error loading weather data: {error.message}</div>;
-  }
+  return (
+    <>
+      <h1>Here is the weather</h1>
+
+      <WeatherContent />
+    </>
+  );
 }
