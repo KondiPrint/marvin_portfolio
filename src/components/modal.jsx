@@ -33,15 +33,17 @@ export default function Modal({ children }) {
   }, [onKeyDown]);
 
   return (
-    <div
-      ref={overlay}
-      className='fixed z-10 left-0 right-0 top-0 bottom-0 mx-auto bg-black/60 rounded-xl'
-      onClick={onClick}>
+    <>
       <div
-        ref={wrapper}
-        className='w-full rounded-xl  px-4 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-fade-in'>
-        {children}
+        ref={overlay}
+        className='fixed z-10 left-0 right-0 top-0 bottom-0 mx-auto bg-black/60 rounded-xl'
+        onClick={onClick}>
+        <div
+          ref={wrapper}
+          className='w-full rounded-xl  px-4 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-fade-in'>
+          {children}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
