@@ -1,33 +1,18 @@
 // src/app/api/lib/weather.js
 
-const myWeatherApi = process.env.NEXT_PUBLIC_OPENWEATHER_API;
-
-export async function getWeatherByZip(zip) {
-  const res = await fetch(
-    `https://api.openweathermap.org/data/2.5/weather?zip=${zip},dk&units=metric&appid=${myWeatherApi}&lang=da`
-  );
-  if (!res.ok) {
-    throw new Error('Failed to fetch weather data');
+const fetchWeather = async (zip, country, apiKey) => {
+  const url = `https://api.openweathermap.org/data/2.5/weather?zip=${zip},${country}&appid=${apiKey}&units=metric`;
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error fetching weather data:', error);
+    throw error;
   }
-  return res.json();
-}
+};
 
-export async function getForecastByLatLon(lat, lon) {
-  const res = await fetch(
-    `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&lang=da&units=metric&appid=${myWeatherApi}`
-  );
-  if (!res.ok) {
-    throw new Error('Failed to fetch forecast data');
-  }
-  return res.json();
-}
-
-export async function getGeoByZip(zip) {
-  const res = await fetch(
-    `https://api.openweathermap.org/geo/1.0/zip?zip=${zip},dk&appid=${myWeatherApi}`
-  );
-  if (!res.ok) {
-    throw new Error('Failed to fetch geo data');
-  }
-  return res.json();
-}
+export default fetchWeather;
