@@ -3,7 +3,7 @@ import { FaReact, FaHtml5, FaCss3Alt, FaJs, FaNodeJs } from 'react-icons/fa';
 export default function HomeSkills() {
   return (
     <>
-      <section id='skills' className='my-20 animate-fade-in'>
+      <section id='skills' className='my-20 animate-fade-in snap-always snap-start'>
         <div className='divider divider-secondary my-10 text-xl'>
           <h2 className='text-3xl font-bold text-center'>My Skills</h2>
         </div>

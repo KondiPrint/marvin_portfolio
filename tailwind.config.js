@@ -25,6 +25,8 @@ module.exports = {
         'slide-in-right': 'slide-in-right 0.6s ease-out',
         'slide-out-right': 'slide-out-right 1s ease-out infinite',
         'slide-out-left': 'slide-out-left 1s ease-out infinite',
+        'zoom-in': 'zoom-in 0.6s ease-out',
+        'zoom-out': 'zoom-out 0.3s ease-out',
       },
       keyframes: {
         heartbeat: {
@@ -110,6 +112,26 @@ module.exports = {
           },
           '100%': {
             transform: 'translateX(-10px)',
+          },
+        },
+        'zoom-in': {
+          '0%': {
+            opacity: '0',
+            transform: 'scale(0.5)',
+          },
+          '100%': {
+            opacity: '100',
+            transform: 'scale(1)',
+          },
+        },
+        'zoom-out': {
+          '0%': {
+            opacity: '1',
+            transform: 'scale(1)',
+          },
+          '100%': {
+            opacity: '0',
+            transform: 'scale(.5)',
           },
         },
       },

@@ -5,7 +5,7 @@ import Image from 'next/image';
 export default function HomeContact() {
   return (
     <>
-      <section id='contact' className='my-20 animate-fade-in'>
+      <section id='contact' className='my-20 animate-fade-in snap-always snap-start'>
         <div className='divider divider-secondary my-10 text-xl'>
           <h2 className='text-3xl font-bold text-center'>Get In Touch</h2>
         </div>

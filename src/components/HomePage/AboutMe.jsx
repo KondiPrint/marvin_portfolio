@@ -6,7 +6,7 @@ export default function HomeAbout() {
   return (
     <>
       <div id='about'></div>
-      <section className='animate-fade-in my-20'>
+      <section className='animate-fade-in my-20 snap-always snap-start'>
         <div className='divider divider-secondary my-10 text-xl'>
           <h2 className='text-3xl font-bold text-center '>About Me</h2>
         </div>

@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
     <html lang='en' className='scroll-smooth'>
       <body className='min-h-dvh flex flex-col bg-base-100 text-base-content'>
         <Header />
-        <main className=''>{children}</main>
+        <main className='snap-mandatory snap-y'>{children}</main>
         <Footer />
       </body>
     </html>
