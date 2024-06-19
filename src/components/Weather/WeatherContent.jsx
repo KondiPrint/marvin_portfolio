@@ -20,7 +20,7 @@ export default function WeatherContent({ data, dataList }) {
       <div className='divider divider-secondary my-10 text-xl'>
         <h2 className='text-3xl font-bold text-center'>{data.name}</h2>
       </div>
-      <article className='mx-auto px-4 my-10'>
+      <article className='mx-auto sm:px-4 my-10'>
         <div className='join join-vertical w-full'>
           {Array.from({ length: 5 }).map((_, index) => {
             const todaysDate = calcTodaysDate(index);

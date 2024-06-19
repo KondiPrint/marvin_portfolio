@@ -7,7 +7,7 @@ export default function HomeSkills() {
         <div className='divider divider-secondary my-10 text-xl'>
           <h2 className='text-3xl font-bold text-center'>My Skills</h2>
         </div>
-        <div className='flex flex-wrap justify-center justify-items-center gap-3'>
+        <div className='flex flex-wrap justify-center justify-items-center gap-3 sm:gap-0'>
           <div
             className='card w-fit bg-base-100 shadow-xl tooltip tooltip-bottom'
             data-tip='Very proficient in HTML5'>

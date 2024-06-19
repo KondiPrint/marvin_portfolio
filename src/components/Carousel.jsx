@@ -1,58 +1,87 @@
-// components/Carousel.js
-
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
-import Image from 'next/image';
+import React, { useState, useRef, createRef } from 'react';
+
+const images = [
+  {
+    src: 'https://images.unsplash.com/photo-1506501139174-099022df5260?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1351&q=80',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1523438097201-512ae7d59c44?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1513026705753-bc3fffca8bf4?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80',
+  },
+];
 
 const Carousel = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const carouselRef = useRef(null);
+  const [currentImage, setCurrentImage] = useState(0);
 
-  const images = [
-    {
-      src: 'https://img.daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.jpg',
-    },
-    { src: 'https://img.daisyui.com/images/stock/photo-1565098772267-60af42b81ef2.jpg' },
-    { src: 'https://img.daisyui.com/images/stock/photo-1572635148818-ef6fd45eb394.jpg' },
-    { src: 'https://img.daisyui.com/images/stock/photo-1494253109108-2e30c049369b.jpg' },
-    { src: 'https://img.daisyui.com/images/stock/photo-1550258987-190a2d41a8ba.jpg' },
-  ];
+  const refs = images.reduce((acc, val, i) => {
+    acc[i] = createRef();
+    return acc;
+  }, {});
 
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  const scrollToImage = (i) => {
+    setCurrentImage(i);
+    refs[i].current.scrollIntoView({
+      behavior: 'smooth',
+      block: 'nearest',
+      inline: 'start',
+    });
   };
 
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+  const totalImages = images.length;
+
+  const nextImage = () => {
+    if (currentImage >= totalImages - 1) {
+      scrollToImage(0);
+    } else {
+      scrollToImage(currentImage + 1);
+    }
   };
 
-  useEffect(() => {
-    const interval = setInterval(nextSlide, 3000);
-    return () => clearInterval(interval);
-  }, []);
+  const previousImage = () => {
+    if (currentImage === 0) {
+      scrollToImage(totalImages - 1);
+    } else {
+      scrollToImage(currentImage - 1);
+    }
+  };
+
+  const arrowStyle =
+    'absolute text-base-100 text-2xl bg-base-content origin-center h-full opacity-75 flex items-center justify-center px-1';
+
+  const sliderControl = (isLeft) => (
+    <button
+      type='button'
+      onClick={isLeft ? previousImage : nextImage}
+      className={`${arrowStyle} ${
+        isLeft
+          ? '-left-7 rounded-tl-full rounded-bl-full'
+          : '-right-7 rounded-tr-full rounded-br-full'
+      }`}
+      style={{ top: '0%' }}>
+      <span role='img' aria-label={`Arrow ${isLeft ? 'left' : 'right'}`}>
+        {isLeft ? '◀' : '▶'}
+      </span>
+    </button>
+  );
 
   return (
     <>
-      <div className='w-5/6 mx-auto' ref={carouselRef}>
-        <button onClick={prevSlide} className='btn btn-lg'>
-          &lt;
-        </button>
-        <div className='carousel size-64 p-4 space-x-4 bg-neutral rounded-box mx-auto'>
-          {images.map((image, index) => (
-            <div
-              key={index}
-              className='carousel-item w-full transition-transform duration-500 ease-in-out'
-              style={{
-                transform: `translateX(-${currentIndex * 100}%)`,
-              }}>
-              <Image src={image.src} width={800} height={800} alt={`Slide ${index}`}></Image>
-            </div>
-          ))}
+      <div className='p-10 flex justify-center items-center'>
+        <div className='relative flex'>
+          <div className='carousel'>
+            {sliderControl(true)}
+            {images.map((img, i) => (
+              <div className='size-full carousel-item' key={i} ref={refs[i]}>
+                <img src={img.src} className='size-full block' alt={`Slide ${i}`} />
+              </div>
+            ))}
+            {sliderControl(false)}
+          </div>
         </div>
-        <button onClick={nextSlide} className='btn btn-lg'>
-          &gt;
-        </button>
       </div>
     </>
   );
