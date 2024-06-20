@@ -8,6 +8,7 @@ import HomeSkills from '@/components/HomePage/Skills';
 export default function Home() {
   return (
     <>
+      <Carousel />
       {/* Hero Section */}
       <HomeHero />
 

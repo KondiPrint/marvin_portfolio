@@ -11,6 +11,7 @@ import Image from 'next/image';
 export default function TodosCards({ data }) {
   const [amountPerSite, setAmountPerSite] = useState(5);
   const [currentSite, setCurrentSite] = useState(0);
+  const [todos, setTodos] = useState(data?.todos || []);
 
   const sliceData = (dataToSlice) => {
     return dataToSlice.slice(
@@ -49,7 +50,7 @@ export default function TodosCards({ data }) {
     }
   };
 
-  let dataLength = data?.todos.length;
+  let dataLength = todos.length;
 
   return (
     <>
@@ -68,7 +69,7 @@ export default function TodosCards({ data }) {
       </aside>
 
       <section className='grid sm:grid-cols-3 gap-5 px-4'>
-        {sliceData(data?.todos).map((t) => (
+        {sliceData(todos).map((t) => (
           <div key={t._id} className='card card-compact w-auto bg-base-100 shadow-2xl'>
             <figure className='relative'>
               <Image
@@ -125,7 +126,7 @@ export default function TodosCards({ data }) {
         currentSite={currentSite}
         dataLength={dataLength}
         amountPerSite={amountPerSite}
-        data={data}
+        data={todos}
       />
       <span className='flex justify-center mt-5 md:mt-10'></span>
     </>

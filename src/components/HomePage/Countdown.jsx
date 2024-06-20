@@ -3,7 +3,7 @@
 import { useEffect, useState, useRef } from 'react';
 
 export default function CountdownTimer() {
-  const countDownDate = new Date('Sep 30, 2024 23:59:59').getTime();
+  const countDownDate = new Date('Aug 30, 2024 23:59:59').getTime();
   const [days, setDays] = useState(0);
   const [hours, setHours] = useState(0);
   const [minutes, setMinutes] = useState(0);

@@ -108,11 +108,11 @@ export default function TodoEditContent({ data, dataCat }) {
                 onChange={(e) => setTitle(e.target.value)}
                 required
                 placeholder=' '
-                className='input input-bordered peer focus:outline-none focus:border-primary w-full'
+                className='input input-bordered peer focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary valid:border-success focus:valid:border-success focus:valid:ring-success w-full'
               />
               <label
                 htmlFor='title'
-                className='absolute top-3 left-3 transition-all duration-300 peer-focus:-top-6 peer-focus:left-1 peer-valid:-top-6 peer-valid:left-1'>
+                className='absolute top-3 left-3 transition-all duration-300 peer-focus:-top-3 peer-focus:-left-1 peer-valid:-top-3 peer-valid:-left-1 peer-focus:bg-base-100 peer-valid:bg-base-100 px-1'>
                 Title:
               </label>
               <span className='indicator-item indicator-center badge peer-focus:hidden'>
@@ -129,10 +129,10 @@ export default function TodoEditContent({ data, dataCat }) {
                 onChange={(e) => setDescription(e.target.value)}
                 required
                 placeholder=' '
-                className='textarea textarea-bordered peer focus:outline-none focus:border-primary w-full'></textarea>
+                className='textarea textarea-bordered peer focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary valid:border-success focus:valid:border-success focus:valid:ring-success w-full'></textarea>
               <label
                 htmlFor='description'
-                className='absolute top-3 left-3 transition-all duration-300 peer-focus:-top-6 peer-focus:left-1 peer-valid:-top-6 peer-valid:left-1'>
+                className='absolute top-3 left-3 transition-all duration-300 peer-focus:-top-3 peer-focus:-left-1 peer-valid:-top-3 peer-valid:-left-1 peer-focus:bg-base-100 peer-valid:bg-base-100 px-1'>
                 Message:
               </label>
               <span className='indicator-item indicator-center badge peer-focus:hidden'>
@@ -158,7 +158,7 @@ export default function TodoEditContent({ data, dataCat }) {
               )}
               <label
                 htmlFor='category'
-                className='absolute top-3 left-3 transition-all duration-300 peer-focus:-top-6 peer-focus:left-1 peer-valid:-top-6 peer-valid:left-1'>
+                className='absolute transition-all duration-300 peer-focus:-top-3 peer-focus:-left-1 peer-valid:-top-3 peer-valid:-left-1 peer-focus:bg-base-100 peer-valid:bg-base-100 px-1'>
                 Category:
               </label>
               <span className='indicator-item indicator-center badge peer-focus:hidden'>
@@ -179,7 +179,7 @@ export default function TodoEditContent({ data, dataCat }) {
               />
               <label
                 htmlFor='myImage'
-                className='absolute top-3 left-3 transition-all duration-300 peer-focus:-top-6 peer-focus:left-1 peer-[:not(placeholder-shown)]:-top-6 peer-[:not(placeholder-shown)]:left-1 peer-placeholder-shown:left-3 peer-placeholder-shown:top-3'>
+                className='absolute top-3 left-3 transition-all duration-300 peer-focus:-top-3 peer-focus:-left-1 peer-[:not(placeholder-shown)]:-top-3 peer-[:not(placeholder-shown)]:-left-1 peer-placeholder-shown:left-3 peer-placeholder-shown:top-3 peer-focus:bg-base-100 peer-[:not(placeholder-shown)]:bg-base-100 px-1'>
                 Image:
               </label>
             </div>
